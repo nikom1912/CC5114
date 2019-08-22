@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.cpp
+Funciones.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.h
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.h
+cmath
+-
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h
+Funciones.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.h
+iostream
+-
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.cpp
+LearningPerceptron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+NPerceptron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h
+Funciones.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.h
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.cpp
+NPerceptron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h
+iostream
+-
+stdexcept
+-
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.cpp
+RedNeuronal.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h
+cmath
+-
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h
+SigmoidNeuron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
+LearningPerceptron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+Layer.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h
+Funciones.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.h
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.cpp
+SigmoidNeuron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
+cmath
+-
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
+LearningPerceptron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/main.cpp
+iostream
+-
+fstream
+-
+SigmoidNeuron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
+LearningPerceptron.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+Layer.h
+/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h
+cstring
+-
+map
+-
+stdlib.h
+-
+

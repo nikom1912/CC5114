@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++14 -pthread -fpermissive -g   CMakeFiles/Red.dir/main.cpp.o CMakeFiles/Red.dir/NPerceptron.cpp.o CMakeFiles/Red.dir/SigmoidNeuron.cpp.o CMakeFiles/Red.dir/RedNeuronal.cpp.o CMakeFiles/Red.dir/Funciones.cpp.o CMakeFiles/Red.dir/LearningPerceptron.cpp.o  -o bin/Red 
