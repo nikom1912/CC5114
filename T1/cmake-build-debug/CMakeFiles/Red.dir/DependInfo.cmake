@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.cpp" "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/Funciones.cpp.o"
-  "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.cpp" "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/LearningPerceptron.cpp.o"
-  "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.cpp" "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/NPerceptron.cpp.o"
-  "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.cpp" "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/RedNeuronal.cpp.o"
-  "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.cpp" "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/SigmoidNeuron.cpp.o"
-  "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/main.cpp" "/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/main.cpp.o"
+  "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.cpp" "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/Funcion.cpp.obj"
+  "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.cpp" "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/LearningPerceptron.cpp.obj"
+  "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.cpp" "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/NPerceptron.cpp.obj"
+  "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.cpp" "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/RedNeuronal.cpp.obj"
+  "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.cpp" "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/SigmoidNeuron.cpp.obj"
+  "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/main.cpp" "C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

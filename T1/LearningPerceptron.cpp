@@ -4,6 +4,8 @@
 
 #include "LearningPerceptron.h"
 
+#include <utility>
+
 
 //int LearningPerceptron::train(double* inputs, double expected){
 //    double lr = 0.1;
@@ -22,7 +24,7 @@
 //    return 0;
 //}
 
-LearningPerceptron::LearningPerceptron(double *ws, double bias, int n, Funciones* nfunc) : NPerceptron(ws, bias, n){
+LearningPerceptron::LearningPerceptron(double *ws, double bias, int n, Funcion *nfunc) : NPerceptron(ws, bias, n){
     this->delta = 0.0;
     this->func = nfunc;
 }
@@ -36,20 +38,23 @@ double LearningPerceptron::getDelta() {
 }
 
 void LearningPerceptron::train() {
-    double* W = this->getW();
-    double bias = this->getBias();
-    for(int i = 0; i < this->n; i++)
-        W[i] += LR*delta*this->x[i];
+    for(int i = 0; i < this->n; i++) {
+        w[i] += LR * delta * this->x[i];
+    }
     bias += LR*delta;
-    this->setW(W);
-    this->setBias(bias);
 }
 
 double LearningPerceptron::eval() const {
-    if(this->x != nullptr){
-        double aux = 0;
-        for(int i = 0; i < this->n ; i++)
-            aux += this->x[i]*this->w[i];
-        return this->func->apply(aux + bias);
+    double aux = 0;
+    for(int i = 0; i < this->n ; i++)
+        aux += this->x[i]*this->w[i];
+    return (double) tanh(aux + bias);
+
+}
+
+void LearningPerceptron::disp() const {
+    for(int i = 0; i < n; i++){
+        std::cout << w[i] << "\t\t\t";
     }
+    std::cout << std::endl;
 }

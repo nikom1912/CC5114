@@ -1,1 +1,3 @@
-/usr/bin/c++   -std=c++14 -pthread -fpermissive -g   CMakeFiles/Red.dir/main.cpp.o CMakeFiles/Red.dir/NPerceptron.cpp.o CMakeFiles/Red.dir/SigmoidNeuron.cpp.o CMakeFiles/Red.dir/RedNeuronal.cpp.o CMakeFiles/Red.dir/Funciones.cpp.o CMakeFiles/Red.dir/LearningPerceptron.cpp.o  -o bin/Red 
+"C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Red.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\Red.dir/objects.a @CMakeFiles\Red.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Red.dir/objects.a -Wl,--no-whole-archive  -o bin\Red.exe -Wl,--out-implib,libRed.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Red.dir\linklibs.rsp

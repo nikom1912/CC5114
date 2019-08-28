@@ -7,19 +7,20 @@
 
 #define LR 0.1
 #include "NPerceptron.h"
-#include "Funciones.h"
+#include "Funcion.h"
 
 class LearningPerceptron : public NPerceptron {
 protected:
     double delta;
-    Funciones* func;
+    Funcion *func;
 public:
-    LearningPerceptron(double *ws, double bias, int n, Funciones* nfunc);
+    LearningPerceptron(double *ws, double bias, int n, Funcion *nfunc);
 //    int train(double* inputs, double expected);
     void setDelta(double delta);
     double getDelta();
     double eval() const override;
     void train();
+    void disp() const;
 };
 
 

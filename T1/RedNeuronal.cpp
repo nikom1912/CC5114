@@ -5,7 +5,7 @@
 #include "RedNeuronal.h"
 #include <cmath>
 
-RedNeuronal::RedNeuronal(int num_inputs, int *capas, int n, Funciones** func,  int salidas) {
+RedNeuronal::RedNeuronal(int num_inputs, int *capas, int n, Funcion** func, int salidas) {
     this->layers = new Layer<LearningPerceptron>*[n + 1];
     this->layers[0] = new HiddenLayer<LearningPerceptron>(num_inputs, capas[0], func[0]);
     for(int i = 1; i < n; i++){
@@ -27,18 +27,26 @@ double* RedNeuronal::forward(double *inputs) const {
     }
     this->layers[capas - 1]->feedLayer(inputs);
     inputs = this->layers[capas - 1]->evalLayer();
-    for(int j =  0; j < this->layers[capas - 1]->getLargo(); j++)
-        inputs[j] = 1.0/(1 - std::exp(-inputs[j]));
     return inputs;
 }
 
-void RedNeuronal::backPropagation(double* expected) {
-    double* error = this->layers[capas]->backPropagation(expected);
-    for(int i = capas - 1; i >0; i--){
+void RedNeuronal::backPropagation(double* inputs, double* expected) {
+    this->forward(inputs);
+
+    double* error = this->layers[capas - 1]->backPropagation(expected);
+    for(int i = capas - 2; i >= 0; i--){
+//        std::cout << "back--layer----" << i << std::endl;
         error = this->layers[i]->backPropagation(error);
     }
-    for(int i = 0; i < capas; i++)
+    for(int i = 0; i < capas; i++) {
         this->layers[i]->train();
+    }
+}
+
+void RedNeuronal::disp() {
+    for(int i = 0; i < capas; i++){
+        layers[i]->disp();
+    }
 }
 
 

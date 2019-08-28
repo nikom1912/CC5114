@@ -5,7 +5,7 @@
 #ifndef REDES_NEURONALES_LAYER_H
 #define REDES_NEURONALES_LAYER_H
 
-#include "Funciones.h"
+#include "Funcion.h"
 #include <iostream>
 
 template <class T>
@@ -14,10 +14,10 @@ protected:
     int entradas;
     T** capa;
     int largo;
-    Funciones* func;
+    Funcion *func;
 
 public:
-    Layer(int entrada, int n, Funciones* nfunc);
+    Layer(int entrada, int n, Funcion *nfunc);
     Layer();
 
     ~Layer();
@@ -25,9 +25,11 @@ public:
     virtual double* backPropagation(double* arg) = 0;
     T* get(int n) const;
     int getLargo() const;
+    int getEntrada() const;
     void feedLayer(double* x);
-    virtual double* evalLayer() const;
+    double* evalLayer() const;
     virtual void train() = 0;
+    void disp();
 //    void backPropagation
 //    void set(T* capa, int n);
 };
@@ -45,7 +47,7 @@ public:
 template <class T>
 class HiddenLayer: public Layer<T>{
 public:
-    HiddenLayer(int entrada, int n, Funciones* nfunc);
+    HiddenLayer(int entrada, int n, Funcion *nfunc);
     ~HiddenLayer() = default;
     double* backPropagation(double *arg);
     void train();
@@ -58,14 +60,24 @@ template<class T>
 double* OutLayer<T>::backPropagation(double *arg) {
     double* outputs = this->evalLayer();
     double error[this->largo] = {};
-    double out_errores[this->entradas] = {};
-    for(int i =0; i < this->largo; i++)
-        error[i] =arg[i] - outputs[i];
+    auto *out_errores = new double[this->entradas];
+    for(int i =0; i < this->largo; i++) {
+        error[i] = arg[i] - outputs[i];
+    }
     for(int i = 0; i < this->largo; i++){
-        double delt = error[i]*this->func->derivative(outputs[i]);
-        this->get(i)->setDelta(delt);
-        for(int j = 0; j < this->entradas; j++)
-            out_errores[j] += this->get(i)->getW()[j]*delt;
+//        std::cout << "error holiaa:      " <<error[i] << std::endl;
+        double delt = error[i]*(this->func->derivative(outputs[i]));
+//        std::cout << "func holia: "<< i <<"    " << this->func->derivative(outputs[i]) << std::endl;
+//        std::cout << "out " << outputs[i] << "    " << "error " << error[i] << std::endl;
+
+//        if(delt < 0.00000001)
+//            this->get(i)->setDelta(0);
+//        else
+        this->capa[i]->setDelta(delt);
+        for(int j = 0; j < this->entradas; j++) {
+            out_errores[j] += this->get(i)->getW()[j] * delt;
+//            std::cout << "out_errores  " << this->get(i)->getW()[j] << std::endl;
+        }
     }
     return out_errores;
 }
@@ -77,26 +89,30 @@ void OutLayer<T>::train() {
 }
 
 template <class T>
-HiddenLayer<T>::HiddenLayer(int entrada, int n, Funciones* nfunc): Layer<T>(entrada, n, nfunc) {
+HiddenLayer<T>::HiddenLayer(int entrada, int n, Funcion *nfunc): Layer<T>(entrada, n, nfunc) {
 }
 
 template <class T>
 double* HiddenLayer<T>::backPropagation(double *arg) {
     double* outputs = this->evalLayer();
-    double out_errores[this->entradas] = {};
+    auto *out_errores = new double[this->entradas];
     for(int i = 0; i < this->largo; i++){
-        double delt = arg[i]*this->func->derivative(outputs[i]);
-        this->get(i)->setDelta(delt);
-        for(int j = 0; j < this->entradas; j++)
-            out_errores[j] += this->get(i)->getW()[j]*delt;
+        double delt = arg[i]*(this->func->derivative(outputs[i]));
+//        std::cout << "arg  holia:    " << i << "   " << arg[i] << std::endl;
+//        std::cout << "outs  holia:    "<< i << "    " <<outputs[i] << std::endl;
+        this->capa[i]->setDelta(delt);
+        for(int j = 0; j < this->entradas; j++) {
+            out_errores[j] += this->get(i)->getW()[j] * delt;
+        }
     }
     return out_errores;
 }
 
 template <class T>
 void HiddenLayer<T>::train() {
-    for(int i = 0; i < this->largo; i++)
+    for(int i = 0; i < this->largo; i++) {
         this->capa[i]->train();
+    }
 }
 
 template <class T>
@@ -108,15 +124,15 @@ Layer<T>::Layer() {
 }
 
 template <class T>
-Layer<T>::Layer(int entrada, int n, Funciones *nfunc) {
+Layer<T>::Layer(int entrada, int n, Funcion *nfunc) {
     func = nfunc;
     largo = n;
-    entradas = 0;
+    entradas = entrada;
     capa= new T*[n];
     for(int i = 0; i < n; i++){
         auto *w = new double[entrada];
         for(int j = 0; j < entrada; j++){
-            w[j] =((rand()%100)/10.0) - 5;
+            w[j] =((double) rand()/RAND_MAX)*2 -1;
         }
         capa[i] = new T(w, 0, entrada, nfunc);
     }
@@ -150,11 +166,21 @@ double* Layer<T>::evalLayer() const{
     auto *out = new double[largo];
     for(int i = 0; i < this->largo; i++){
         out[i] = this->capa[i]->eval();
+//        std::cout << "out " << i << "   holia:   " << out[i] << std::endl;
     }
     return out;
 }
 
+template <class T>
+void Layer<T>::disp() {
+    for(int i = 0; i < largo; i++)
+        capa[i]->disp();
+}
 
+template <class T>
+int Layer<T>::getEntrada() const {
+    return  entradas;
+}
 
 
 

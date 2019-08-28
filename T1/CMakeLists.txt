@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.13.2)
 project("Redes Neuronales")
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -fpermissive")
+
+
 
 #find_package (PkgConfig REQUIRED)
 #find_package (OpenGL REQUIRED)
@@ -25,11 +26,11 @@ SET(MAIN_SET
         SigmoidNeuron.cpp
         RedNeuronal.h
         RedNeuronal.cpp
-        Funciones.h
-        Funciones.cpp
+        Funcion.h
+        Funcion.cpp
         LearningPerceptron.cpp
         LearningPerceptron.h
-        main.cpp
         )
 
 add_executable(Red main.cpp ${MAIN_SET})
+add_executable(Tester main2.cpp ${MAIN_SET})

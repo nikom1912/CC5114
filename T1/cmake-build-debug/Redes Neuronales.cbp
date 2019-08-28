@@ -8,119 +8,171 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug"/>
+				<Option working_dir="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Red">
-				<Option output="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/bin/Red" prefix_auto="0" extension_auto="0"/>
+				<Option output="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/bin/Red.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Red"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Red"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Red/fast">
-				<Option output="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/bin/Red" prefix_auto="0" extension_auto="0"/>
+				<Option output="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/bin/Red.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Red/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Red/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tester">
+				<Option output="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/bin/Tester.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tester"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tester/fast">
+				<Option output="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/bin/Tester.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tester/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug"/>
+				<Option working_dir="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/nikom/Desktop/Redes\ neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.cpp">
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.cpp">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.h">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.cpp">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.cpp">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.cpp">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.cpp">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h">
+			<Option target="Red"/>
+			<Option target="Tester"/>
+		</Unit>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/main.cpp">
 			<Option target="Red"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Funciones.h">
-			<Option target="Red"/>
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/main2.cpp">
+			<Option target="Tester"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.cpp">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.cpp">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.cpp">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.cpp">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/main.cpp">
-			<Option target="Red"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/CMakeLists.txt">
+		<Unit filename="C:/Users/nikom/Desktop/Redes neuronales/C++/T1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

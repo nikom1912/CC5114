@@ -1,3 +1,4 @@
-/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir
-/mnt/c/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Red.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/Tester.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

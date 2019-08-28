@@ -12,10 +12,8 @@ NPerceptron::NPerceptron(double* w, double bias, int n){
 }
 NPerceptron::~NPerceptron()= default;
 
-int NPerceptron::setW(double* w) {
-    if((sizeof(w)/sizeof(*w)) - this->n > 0.001)
-        return -1;
-    this->w = w;
+int NPerceptron::setW(double* nw) {
+    this->w = nw;
     return 0;
 }
 double* NPerceptron::getW() const{
@@ -30,11 +28,8 @@ double NPerceptron::getBias() const{
 }
 
 int NPerceptron::feed(double *x){
-    if( sizeof(x)/ sizeof(*x) - n < 0.000000001) {
-        this->x = x;
-        return 0;
-    }
-    return -1;
+    this->x = x;
+    return 0;
 }
 double NPerceptron::eval() const{
     if(this->x != nullptr){
