@@ -6,22 +6,22 @@
 #define REDES_NEURONALES_FUNCIONES_H
 
 #include <cmath>
-
+#include <iostream>
 class Funciones {
 public:
-    virtual double apply(double x) = 0;
-    virtual double derivative(double x) = 0;
+    virtual double apply(double x) const {return 12;};
+    virtual double derivative(double x){return 12;};
 };
 
 class Sigmoid: public Funciones {
 public:
-    double apply(double x) override;
+    double apply(double x) const override;
     double derivative(double x) override;
 };
 
 class Tanh: public Funciones {
 public:
-    double apply(double x) override;
+    double apply(double x) const override;
     double derivative(double x) override;
 };
 
