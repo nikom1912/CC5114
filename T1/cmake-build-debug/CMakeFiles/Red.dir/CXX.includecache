@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.cpp
+Funcion.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.h
+iostream
+-
+
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.h
 cmath
 -
@@ -18,11 +24,21 @@ C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.h
 iostream
 -
 
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.cpp
+LearningPerceptron.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+utility
+-
+
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
 NPerceptron.h
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h
 Funcion.h
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.h
+
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.cpp
+NPerceptron.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h
 
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/NPerceptron.h
 iostream
@@ -46,7 +62,35 @@ C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h
 Funcion.h
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.h
 
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.cpp
+SigmoidNeuron.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
+cmath
+-
+
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
 LearningPerceptron.h
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/main.cpp
+iostream
+-
+fstream
+-
+SigmoidNeuron.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
+LearningPerceptron.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
+Layer.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h
+RedNeuronal.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h
+cstring
+-
+map
+-
+iterator
+-
+cstdlib
+-
 

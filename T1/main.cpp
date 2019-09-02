@@ -11,19 +11,22 @@
 
 using namespace std;
 
-void iris_red();
+void iris_red(int* capas_red, int n, Funcion** funciones, double lr);
 int argmax(double* l, int n);
 void poker_red(int* capas_red, int n, Funcion** funciones, double lr);
 void sensorial(int* capas_red, int n, Funcion** funciones, double lr);
+double** shuffle(double** list, int n, double** valores);
+double** shuffle_str(double** list, int n, string** valores);
 int file_length(string filename);
 
 int main() {
 //    iris_red();
-    sensorial(new int[3]{10,15, 12}, 3, new Funcion*[3]{new Tanh(), new Sigmoid(), new Sigmoid()}, 0.1);
+    iris_red(new int[3]{10,15, 12}, 3, new Funcion*[3]{new Tanh(), new Sigmoid(), new Sigmoid()}, 0.1);
     return 0;
 }
-void iris_red(){
+void iris_red(int* capas_red, int n, Funcion** funciones, double lr){
     map<string, double*> Iris;
+    // 1-hot encoding
     Iris["Iris-setosa"] = new double[3]{0,0,1};
     Iris["Iris-virginica"] = new double[3]{1,0,0};
     Iris["Iris-versicolor"] = new double[3]{0,0,1};
@@ -34,8 +37,11 @@ void iris_red(){
     ifstream fe("dataset/iris/iris.data");
     size_t pos = 0;
     string token;
-    double auxd[150][4];
-    string valor_aux[150];
+    auto **auxd = new double*[150]{};
+    for(int i = 0; i < 150; i++)
+        auxd[i] = new double[4]{};
+    auto *valor_aux = new string[150]{};
+
     double datos[num_data][4];
     string valor[num_data];
     double test[num_test][4];
@@ -60,22 +66,19 @@ void iris_red(){
 
     }
     fe.close();
-
-
-    for(int i = 0, k = 0; i < 150; i++, k = (k+13)%150){
+//    auxd = shuffle_str(auxd, 150, &valor_aux);
+    for(int i = 0; i < 150; i++){
         for(int j = 0; j < 4; j++){
-            token = cadena.substr(0, pos);
-            double aux = atof(token.c_str());
             if(i < num_data)
-                datos[i][j] = auxd[k][j];
+                datos[i][j] = auxd[i][j];
             else
-                test[i - num_data][j] = auxd[k][j];
+                test[i - num_data][j] = auxd[i][j];
 //            cout << token << endl;
         }
         if(i < num_data)
-            valor[i] = valor_aux[k];
+            valor[i] = valor_aux[i];
         else
-            valor_test[i - num_data] = valor_aux[k];
+            valor_test[i - num_data] = valor_aux[i];
     }
     for(int i = 0; i < num_data; i++)
         for(int j = 0; j < 4; j++)
@@ -86,8 +89,8 @@ void iris_red(){
 //    for(int i = 0; i < 100; i++)
 //        cout << datos[i][0] << endl;
 
-    auto *red = new RedNeuronal(4, new int[3]{25,25,25}, 3, new Funcion*[3]{new Sigmoid(), new Tanh(), new Sigmoid()} , 3);
-    for(int j = 0; j < 1; j++)
+    auto *red = new RedNeuronal(4, capas_red, n, funciones , 3 , lr);
+    for(int j = 0; j < 30; j++)
         for(int i = 0; i < num_data; i++){
             cout << "back " << i << endl;
             red->backPropagation(datos[i], Iris[valor[i]]);
@@ -96,8 +99,6 @@ void iris_red(){
         double* res = red->forward(test[i]);
         cout << "-------------" << endl;
         cout << "IRIS:  " << valor_test[i] << endl;
-        for(int k = 0; k < 4; k++)
-            cout << "   attr " << k << "  " << test[i][k];
         for (int j = 0; j < 3 ; j++) {
             cout << endl;
             cout << "res " << res[j] << endl;
@@ -111,6 +112,8 @@ void iris_red(){
 void poker_red(int* capas_red, int n, Funcion** funciones, double lr = 0.1){
     map<int, double*> pokerMap;
     double* value;
+    int atrib = 10;
+    // 1-hot encoding
     for(int i = 0; i < 10; i++) {
         value = new double[10]{};
         value[i] = 1;
@@ -120,20 +123,23 @@ void poker_red(int* capas_red, int n, Funcion** funciones, double lr = 0.1){
         cout << pokerMap[2][i] << endl;
     string cadena;
     string deli = ",";
-    ifstream ftraining("dataset/poker/testing.data");
-    ifstream ftest("dataset/poker/training.data");
+    ifstream ftraining("dataset/poker/training.data");
+    ifstream ftest("dataset/poker/testing.data");
     size_t pos = 0;
     string token;
-    int num_data = 23000;
-    int num_test = 30;
-    double datos[num_data][10];
-    int valor[num_data];
-    double test[200][10];
-    int valor_test[200];
+    int num = 25000;
+    int num_test = 500;
+    auto **datos = new double *[num]{};
+    for (int i = 0; i < num; i++)
+        datos[i] = new double[48]{};
+    int *valor = new int[num]{};
+    auto **test = new double *[num_test]{};
+    for (int i = 0; i < num_test; i++)
+        test[i] = new double[atrib]{};
+    int valor_test[num_test];
     double max[10] = {};
     double min[10] = {};
-
-    for(int i = 0; i < num_data; i++){
+    for(int i = 0; i < num; i++){
         ftraining >> cadena;
         int j = 0;
         while ((pos = cadena.find(deli)) != std::string::npos) {
@@ -149,8 +155,8 @@ void poker_red(int* capas_red, int n, Funcion** funciones, double lr = 0.1){
         valor[i] = stoi(cadena);
     }
     ftraining.close();
-    int step = 13;
-    for(int i = 0, k = 1 ; i < 200; i++){
+
+    for(int i = 0; i < num_test; i++){
         ftest >> cadena;
         int j = 0;
         while ((pos = cadena.find(deli)) != std::string::npos) {
@@ -164,17 +170,17 @@ void poker_red(int* capas_red, int n, Funcion** funciones, double lr = 0.1){
         valor_test[i] = stoi(cadena);
     }
     ftest.close();
-    for(int i = 0; i < num_data; i++)
+    for(int i = 0; i < num; i++)
         for(int j = 0; j < 10; j++)
             datos[i][j] = (datos[i][j] - min[j])/(max[j] - min[j]);
-    for(int i = 0; i < 200; i++)
+    for(int i = 0; i < num_test; i++)
         for(int j = 0; j < 10; j++)
             test[i][j] = (test[i][j] - min[j])/(max[j] - min[j]);
 //    for(int i = 0; i < 100; i++)
 //        cout << datos[i][0] << endl;
 
 
-    for(int j = num_data; j <= num_data; j+= 50 ) {
+    for(int j = 0; j <= num; j+= 50 ) {
         auto *red = new RedNeuronal(10, capas_red, n, funciones , 10 , lr);
         for (int i = 0; i < j; i++) {
             red->backPropagation(datos[i], pokerMap[valor[i]]);
@@ -193,13 +199,14 @@ void poker_red(int* capas_red, int n, Funcion** funciones, double lr = 0.1){
 }
 
 void sensorial(int* capas_red, int n, Funcion** funciones, double lr = 0.1) {
-    map<int, double*> sensorMap;
+    map<int, double *> sensorMap;
     double *value;
     int atrib = 48;
     int num_res = 11;
+    // 1-hot encoding
     for (int i = 1; i <= num_res; i++) {
         value = new double[num_res]{};
-        value[i-1] = 1;
+        value[i - 1] = 1;
         sensorMap[i] = value;
     }
     string cadena;
@@ -210,17 +217,21 @@ void sensorial(int* capas_red, int n, Funcion** funciones, double lr = 0.1) {
     int num = file_length("dataset/sensorial/sensorial.txt") - 1;
     cout << num << endl;
     ifstream file("dataset/sensorial/sensorial.txt");
-    auto **datos = new double*[num]{};
-    for(int i = 0;i < num; i++)
+    auto **datos = new double *[num]{};
+    for (int i = 0; i < num; i++)
         datos[i] = new double[48]{};
     int *valor = new int[num]{};
-    auto **test = new double*[220]{};
-    for(int i = 0; i < 220; i++)
-        test[i] = new double[48]{};
+    auto **test = new double *[220]{};
+    for (int i = 0; i < 220; i++)
+        test[i] = new double[atrib]{};
     int valor_test[220];
-    auto *max = new double[48]{};
-    auto *min = new double[48]{};
-    for(int i = 0; i < num; i++){
+    auto *max = new double[atrib]{};
+    auto *min = new double[atrib]{};
+    for (int i = 0; i < atrib; i++) {
+        max[i] = INT32_MIN;
+        min[i] = INT32_MAX;
+    }
+    for (int i = 0; i < num; i++) {
         file >> cadena;
         int j = 0;
         while ((pos = cadena.find(deli)) != std::string::npos) {
@@ -236,15 +247,21 @@ void sensorial(int* capas_red, int n, Funcion** funciones, double lr = 0.1) {
         valor[i] = stoi(cadena);
     }
     file.close();
-    for(int i = 0; i < num; i++)
-        for(int j = 0; j < atrib; j++)
-            datos[i][j] = (datos[i][j] - min[j])/(max[j] - min[j]);
-
-    for(int i = 0; i < 220; i++){
-        for(int j = 0; j < atrib; j++) {
+    for (int i = 0; i < atrib; i++)
+        cout << max[i] << "-------" << min[i] << endl;
+    for (int i = 0; i < num; i++)
+        for (int j = 0; j < atrib; j++)
+            datos[i][j] = (datos[i][j] - min[j]) / (max[j] - min[j]);
+    for (int i = 0; i < 220; i++) {
+        for (int j = 0; j < atrib; j++) {
             test[i][j] = datos[i * num / 220][j];
             valor_test[i] = valor[i * num / 220];
         }
+    }
+    for (int i = 0; i < 300; i++){
+        for (int j = 0; j < atrib; j++)
+            cout << "dato "<< j <<"  " << datos[i + 20000][j] << endl;
+        cout << endl;
     }
 
     for(int j = 0; j <= num; j+= 50) {
@@ -290,4 +307,32 @@ int file_length(string filename){
     }
     file.close();
     return largo;
+}
+
+double** shuffle(double** list, int n, double** valores){
+    for(int i = n - 1; i > 0; i--) {
+        int j = rand() % i;
+        double* tmp = list[i];
+        double tmp2 = *valores[i];
+        list[i] = list[j];
+        *valores[i] = *valores[j];
+        list[j] = tmp;
+        *valores[j] = tmp2;
+    }
+    return list;
+}
+
+double** shuffle_str(double** list, int n, string** valores){
+    cout << "holia" << endl;
+    for(int i = n - 1; i > 0; i--) {
+        int j = rand() % i;
+        double* tmp = list[i];
+        string tmp2 = *valores[i];
+        cout << tmp2 << endl;
+        list[i] = list[j];
+        *valores[i] = *valores[j];
+        list[j] = tmp;
+        *valores[j] = tmp2;
+    }
+    return list;
 }

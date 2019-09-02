@@ -8,32 +8,95 @@
 #include "Funcion.h"
 #include <iostream>
 
+
+/*
+ * Clase para una capa de "neuronas" tipo T de la red
+ */
 template <class T>
 class Layer {
 protected:
+    // numero de inputs de la capa (neuronas que la componen)
     int entradas;
+
+    // array de neuronas
     T** capa;
+
+    // cantidad de neuronas de la capa
     int largo;
+
+    //funcion de activacion para la capa
     Funcion *func;
 
 public:
+    /*
+     * Constructor de un Layer
+     * @param entrada numero de inputs de la capa
+     * @param n cantidad de neuronas de la caoa
+     * @param nfunc funcion de activacion
+     */
     Layer(int entrada, int n, Funcion *nfunc);
-    Layer(int entrada, int n, Funcion *nfunc, double lr);
-    Layer();
 
+    /*
+     * Constructor de un Layer
+     * @param entrada numero de inputs de la capa
+     * @param n cantidad de neuronas de la caoa
+     * @param nfunc funcion de activacion
+     * @param lr learning rate
+     */
+    Layer(int entrada, int n, Funcion *nfunc, double lr);
+
+    /*
+     * Destructor de la capa
+     */
     ~Layer();
 
+    /*
+     * Aplica la backpropagation en la capa
+     */
     virtual double* backPropagation(double* arg) = 0;
+
+    /*
+     * obtiene la neurona en la posicion n
+     * @param n indice de la neurona a obtener
+     * @return neurona en la posicion n
+     */
     T* get(int n) const;
+
+    /*
+     * Retorna el largo de la capa
+     * @return largo
+     */
     int getLargo() const;
+
+    /*
+     * Retorna el numero de inputs de la capa
+     * @return entradas
+     */
     int getEntrada() const;
+
+    /*
+     * alimenta cada neurona de la capa con inputs dados
+     * @param x inputs
+     */
     void feedLayer(double* x);
+
+    /*
+     * Evalua el output de cada neurona entregando un array con los outputs
+     * @return array de outputs
+     */
     double* evalLayer() const;
+
+    /*
+     * Actualiza los pesos de cada neurona en la capa
+     */
     virtual void train() = 0;
     void disp();
 };
 
 
+/*
+ * Clase para una capa de salida
+ */
 template <class T>
 class OutLayer: public Layer<T> {
 public:
@@ -44,6 +107,9 @@ public:
     void train();
 };
 
+/*
+ * Clase para una capa escondida o interna
+ */
 template <class T>
 class HiddenLayer: public Layer<T>{
 public:
@@ -114,13 +180,6 @@ void HiddenLayer<T>::train() {
     }
 }
 
-template <class T>
-Layer<T>::Layer() {
-    entradas = 0;
-    largo = 0;
-    func = new Sigmoid();
-    capa = nullptr;
-}
 
 //Layer constructors
 template <class T>
