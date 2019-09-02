@@ -18,6 +18,7 @@ protected:
 
 public:
     Layer(int entrada, int n, Funcion *nfunc);
+    Layer(int entrada, int n, Funcion *nfunc, double lr);
     Layer();
 
     ~Layer();
@@ -30,8 +31,6 @@ public:
     double* evalLayer() const;
     virtual void train() = 0;
     void disp();
-//    void backPropagation
-//    void set(T* capa, int n);
 };
 
 
@@ -39,6 +38,7 @@ template <class T>
 class OutLayer: public Layer<T> {
 public:
     OutLayer(int entrada, int n);
+    OutLayer(int entrada, int n, double lr);
     ~OutLayer() = default;
     double* backPropagation(double *arg);
     void train();
@@ -48,6 +48,7 @@ template <class T>
 class HiddenLayer: public Layer<T>{
 public:
     HiddenLayer(int entrada, int n, Funcion *nfunc);
+    HiddenLayer(int entrada, int n, Funcion *nfunc, double lr);
     ~HiddenLayer() = default;
     double* backPropagation(double *arg);
     void train();
@@ -55,6 +56,9 @@ public:
 
 template <class T>
 OutLayer<T>::OutLayer(int entrada, int n): Layer<T>(entrada, n, new Sigmoid()) {}
+
+template <class T>
+OutLayer<T>::OutLayer(int entrada, int n, double lr): Layer<T>(entrada, n, new Sigmoid(), lr) {}
 
 template<class T>
 double* OutLayer<T>::backPropagation(double *arg) {
@@ -65,18 +69,11 @@ double* OutLayer<T>::backPropagation(double *arg) {
         error[i] = arg[i] - outputs[i];
     }
     for(int i = 0; i < this->largo; i++){
-//        std::cout << "error holiaa:      " <<error[i] << std::endl;
-        double delt = error[i]*(this->func->derivative(outputs[i]));
-//        std::cout << "func holia: "<< i <<"    " << this->func->derivative(outputs[i]) << std::endl;
-//        std::cout << "out " << outputs[i] << "    " << "error " << error[i] << std::endl;
 
-//        if(delt < 0.00000001)
-//            this->get(i)->setDelta(0);
-//        else
+        double delt = error[i]*(this->func->derivative(outputs[i]));
         this->capa[i]->setDelta(delt);
         for(int j = 0; j < this->entradas; j++) {
             out_errores[j] += this->get(i)->getW()[j] * delt;
-//            std::cout << "out_errores  " << this->get(i)->getW()[j] << std::endl;
         }
     }
     return out_errores;
@@ -93,13 +90,15 @@ HiddenLayer<T>::HiddenLayer(int entrada, int n, Funcion *nfunc): Layer<T>(entrad
 }
 
 template <class T>
+HiddenLayer<T>::HiddenLayer(int entrada, int n, Funcion *nfunc, double lr): Layer<T>(entrada, n, nfunc, lr) {
+}
+
+template <class T>
 double* HiddenLayer<T>::backPropagation(double *arg) {
     double* outputs = this->evalLayer();
     auto *out_errores = new double[this->entradas];
     for(int i = 0; i < this->largo; i++){
         double delt = arg[i]*(this->func->derivative(outputs[i]));
-//        std::cout << "arg  holia:    " << i << "   " << arg[i] << std::endl;
-//        std::cout << "outs  holia:    "<< i << "    " <<outputs[i] << std::endl;
         this->capa[i]->setDelta(delt);
         for(int j = 0; j < this->entradas; j++) {
             out_errores[j] += this->get(i)->getW()[j] * delt;
@@ -123,6 +122,7 @@ Layer<T>::Layer() {
     capa = nullptr;
 }
 
+//Layer constructors
 template <class T>
 Layer<T>::Layer(int entrada, int n, Funcion *nfunc) {
     func = nfunc;
@@ -138,9 +138,29 @@ Layer<T>::Layer(int entrada, int n, Funcion *nfunc) {
     }
 }
 
+template<class T>
+Layer<T>::Layer(int entrada, int n, Funcion *nfunc, double lr) {
+    func = nfunc;
+    largo = n;
+    entradas = entrada;
+    capa= new T*[n];
+    for(int i = 0; i < n; i++){
+        auto *w = new double[entrada];
+        for(int j = 0; j < entrada; j++)
+            w[j] =((double) rand()/RAND_MAX)*3 - 1.5;
+        capa[i] = new T(w, 0, entrada, nfunc, lr);
+    }
+}
+
+
+//Layer destructor
 template <class T>
 Layer<T>::~Layer() = default;
 
+
+/*
+ *
+ */
 template <class T>
 T* Layer<T>::get(int n) const {
     if(n >= this->largo){
@@ -166,7 +186,6 @@ double* Layer<T>::evalLayer() const{
     auto *out = new double[largo];
     for(int i = 0; i < this->largo; i++){
         out[i] = this->capa[i]->eval();
-//        std::cout << "out " << i << "   holia:   " << out[i] << std::endl;
     }
     return out;
 }
@@ -181,8 +200,6 @@ template <class T>
 int Layer<T>::getEntrada() const {
     return  entradas;
 }
-
-
 
 
 

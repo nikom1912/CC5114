@@ -29,6 +29,11 @@ LearningPerceptron::LearningPerceptron(double *ws, double bias, int n, Funcion *
     this->func = nfunc;
 }
 
+LearningPerceptron::LearningPerceptron(double *ws, double bias, int n, Funcion *nfunc, double lr) : NPerceptron(ws, bias, n){
+    this->delta = 0.0;
+    this->func = nfunc;
+    this->lr = lr;
+}
 void LearningPerceptron::setDelta(double ndelta) {
     this->delta = ndelta;
 }
@@ -39,22 +44,24 @@ double LearningPerceptron::getDelta() {
 
 void LearningPerceptron::train() {
     for(int i = 0; i < this->n; i++) {
-        w[i] += LR * delta * this->x[i];
+        w[i] += lr * delta * this->x[i];
     }
-    bias += LR*delta;
+    bias += lr*delta;
 }
 
 double LearningPerceptron::eval() const {
     double aux = 0;
     for(int i = 0; i < this->n ; i++)
         aux += this->x[i]*this->w[i];
-    return (double) tanh(aux + bias);
+    return this->func->apply(aux + bias);
 
 }
 
 void LearningPerceptron::disp() const {
     for(int i = 0; i < n; i++){
-        std::cout << w[i] << "\t\t\t";
+        std::cout << w[i] << "\t";
     }
     std::cout << std::endl;
 }
+
+

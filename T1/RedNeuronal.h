@@ -21,6 +21,7 @@ private:
 
 public:
     RedNeuronal(int num_inputs, int *capas, int n, Funcion** func, int salidas);
+    RedNeuronal(int num_inputs, int *capas, int n, Funcion** func, int salidas, double lr);
     ~RedNeuronal();
 
     void backPropagation(double* inputs, double* expected);

@@ -30,6 +30,12 @@ iostream
 stdexcept
 -
 
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.cpp
+RedNeuronal.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h
+cmath
+-
+
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h
 SigmoidNeuron.h
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
@@ -43,26 +49,4 @@ C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Funcion.h
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
 LearningPerceptron.h
 C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
-
-C:/Users/nikom/Desktop/Redes neuronales/C++/T1/main.cpp
-iostream
--
-fstream
--
-SigmoidNeuron.h
-C:/Users/nikom/Desktop/Redes neuronales/C++/T1/SigmoidNeuron.h
-LearningPerceptron.h
-C:/Users/nikom/Desktop/Redes neuronales/C++/T1/LearningPerceptron.h
-Layer.h
-C:/Users/nikom/Desktop/Redes neuronales/C++/T1/Layer.h
-RedNeuronal.h
-C:/Users/nikom/Desktop/Redes neuronales/C++/T1/RedNeuronal.h
-cstring
--
-map
--
-iterator
--
-cstdlib
--
 

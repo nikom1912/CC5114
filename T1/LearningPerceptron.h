@@ -5,7 +5,6 @@
 #ifndef C___LEARNINGPERCEPTRON_H
 #define C___LEARNINGPERCEPTRON_H
 
-#define LR 0.1
 #include "NPerceptron.h"
 #include "Funcion.h"
 
@@ -13,8 +12,10 @@ class LearningPerceptron : public NPerceptron {
 protected:
     double delta;
     Funcion *func;
+    double lr = 0.1;
 public:
     LearningPerceptron(double *ws, double bias, int n, Funcion *nfunc);
+    LearningPerceptron(double *ws, double bias, int n, Funcion *nfunc, double lr);
 //    int train(double* inputs, double expected);
     void setDelta(double delta);
     double getDelta();
