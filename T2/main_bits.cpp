@@ -122,7 +122,13 @@ int main() {
 //        std::cout << rand()%(-1000) << std::endl;
 //    }
     ga->run();
+    int* res = ga->getBestList()[ga->getIters() - 1];
     std::cout << "number to convert: " << numberToConvert << std::endl;
+    std::cout << "best response: ";
+    for(int i = 0; i < numberOfBits; i++){
+        std::cout << res[i];
+    }
+    std::cout << std::endl;
 
 }
 

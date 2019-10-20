@@ -153,7 +153,7 @@ int fitness_knap(int *resp, int number_boxes){
     }
     else
         result = - dif_pesos;
-    result += valor_total;
+    result += valor_total*2;
     return std::max(0, result);
 }
 
@@ -220,8 +220,9 @@ int *sequence_knap_factory(int number_boxes){
     return res;
 }
 
+// en este caso no se usa y solo nos fijamos el maximo de iteraciones dado
 bool termination_knap(int* res, int number_boxes){
-    return fitness_knap(res, number_boxes) == -2;
+    return false;
 
 }
 

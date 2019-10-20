@@ -8,8 +8,8 @@
 #include <fstream>
 
 
-int numberOfChars = 76;
-char wordToFind[77] = "hola como estas yo estoy bien haciendo la tarea de redes neuronales eso chao";
+int numberOfChars = 77;
+char wordToFind[78] = "hola como estas yo estoy bien haciendo la tarea de redes neuronales eso chaoo";
 int population_size = 100;
 double mutation_rate = 0.1;
 
@@ -109,6 +109,8 @@ int main() {
     std::ofstream file("r1.txt");
     file << "Grafico para frase: '" << wordToFind << "'" << std::endl;
     file << numberOfChars << std::endl;
+    file << population_size << std::endl;
+    file << mutation_rate << std::endl;
     for(int i = 0; i < iters + 1; i++){
         file << forGraph[i] << "\n";
     }
@@ -134,6 +136,7 @@ char** init_pop(int population, int number_char){
 }
 
 char gen_generator(){
+    //caracteres codigo ascii [A-Z]= [65-90]   [a-z]=[97-122]  espacio=32
     int r = 65 + std::rand()%27;
 
     // espacio
@@ -158,6 +161,7 @@ char * generate_child(char* parent1, char* parent2, int number_char){
     int indice = std::rand()%number_char;
     char *child1 = new char[number_char];
     char *child2 = new char[number_char];
+    //se crean dos hijos cada uno quedandose con una parte de cada padre
     for (int i = 0; i < number_char; ++i) {
         if(i < indice){
             child1[i] = parent1[i];
@@ -168,6 +172,8 @@ char * generate_child(char* parent1, char* parent2, int number_char){
             child2[i] = parent1[i];
         }
     }
+
+    // se elige el hijo con mejor fitness
     if(fitness_word(child1, number_char) > fitness_word(child2, number_char)) {
         free(child2);
         return child1;
@@ -187,6 +193,7 @@ int getRandomIndex(int *acc_fitness, int n){
     }
     return n - 1;
 }
+
 char *word_factory(int number_char){
     char *res = new char[number_char + 1];
     for(int i = 0; i < number_char; i++)
