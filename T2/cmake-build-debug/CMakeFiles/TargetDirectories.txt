@@ -1,0 +1,5 @@
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/cmake-build-debug/CMakeFiles/Bits_Main.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/cmake-build-debug/CMakeFiles/Word_main.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/cmake-build-debug/CMakeFiles/T2_main.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

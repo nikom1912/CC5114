@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/GA_T.h
+string
+-
+iostream
+-
+utils.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/utils.h
+vector
+-
+
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/main_bits.cpp
+GA_T.h
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/GA_T.h
+ctime
+-
+cstdlib
+-
+random
+-
+
+C:/Users/nikom/Desktop/Redes neuronales/C++/T2/utils.h
+iostream
+-
+
