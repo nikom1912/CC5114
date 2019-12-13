@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/T3.dir/num_con_repeticiones.cpp.o CMakeFiles/T3.dir/utils.cpp.o  -o T3 

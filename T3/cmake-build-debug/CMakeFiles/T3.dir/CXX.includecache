@@ -1,0 +1,102 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/niko/Escritorio/Redes neuronales/T3/AST.h
+vector
+-
+Node.h
+/home/niko/Escritorio/Redes neuronales/T3/Node.h
+NodeFactory.h
+/home/niko/Escritorio/Redes neuronales/T3/NodeFactory.h
+random
+-
+TerminalNode.h
+/home/niko/Escritorio/Redes neuronales/T3/TerminalNode.h
+
+/home/niko/Escritorio/Redes neuronales/T3/AddNode.h
+BinaryNode.h
+/home/niko/Escritorio/Redes neuronales/T3/BinaryNode.h
+
+/home/niko/Escritorio/Redes neuronales/T3/BinaryNode.h
+Node.h
+/home/niko/Escritorio/Redes neuronales/T3/Node.h
+
+/home/niko/Escritorio/Redes neuronales/T3/GP.h
+string
+-
+iostream
+-
+vector
+-
+
+/home/niko/Escritorio/Redes neuronales/T3/MaxNode.h
+BinaryNode.h
+/home/niko/Escritorio/Redes neuronales/T3/BinaryNode.h
+
+/home/niko/Escritorio/Redes neuronales/T3/MultNode.h
+BinaryNode.h
+/home/niko/Escritorio/Redes neuronales/T3/BinaryNode.h
+
+/home/niko/Escritorio/Redes neuronales/T3/Node.h
+utils.cpp
+/home/niko/Escritorio/Redes neuronales/T3/utils.cpp
+iostream
+-
+vector
+-
+
+/home/niko/Escritorio/Redes neuronales/T3/NodeFactory.h
+AddNode.h
+/home/niko/Escritorio/Redes neuronales/T3/AddNode.h
+SubNode.h
+/home/niko/Escritorio/Redes neuronales/T3/SubNode.h
+MultNode.h
+/home/niko/Escritorio/Redes neuronales/T3/MultNode.h
+MaxNode.h
+/home/niko/Escritorio/Redes neuronales/T3/MaxNode.h
+
+/home/niko/Escritorio/Redes neuronales/T3/SubNode.h
+BinaryNode.h
+/home/niko/Escritorio/Redes neuronales/T3/BinaryNode.h
+
+/home/niko/Escritorio/Redes neuronales/T3/TerminalNode.h
+Node.h
+/home/niko/Escritorio/Redes neuronales/T3/Node.h
+
+/home/niko/Escritorio/Redes neuronales/T3/num_con_repeticiones.cpp
+iostream
+-
+AddNode.h
+/home/niko/Escritorio/Redes neuronales/T3/AddNode.h
+MultNode.h
+/home/niko/Escritorio/Redes neuronales/T3/MultNode.h
+array
+-
+vector
+-
+random
+-
+AST.h
+/home/niko/Escritorio/Redes neuronales/T3/AST.h
+NodeFactory.h
+/home/niko/Escritorio/Redes neuronales/T3/NodeFactory.h
+GP.h
+/home/niko/Escritorio/Redes neuronales/T3/GP.h
+ctime
+-
+cstdlib
+-
+random
+-
+fstream
+-
+
+/home/niko/Escritorio/Redes neuronales/T3/utils.cpp
+vector
+-
+
