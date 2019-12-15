@@ -27,7 +27,7 @@
 
 ---------------  S U M M A R Y ------------
 
-Command Line: -javaagent:/home/niko/Descargas/idea-IU-192.7142.36/lib/idea_rt.jar=33209:/home/niko/Descargas/idea-IU-192.7142.36/bin -Dfile.encoding=UTF-8 Main
+Command Line: -javaagent:/home/niko/Descargas/idea-IU-192.7142.36/lib/idea_rt.jar=33209:/home/niko/Descargas/idea-IU-192.7142.36/bin -Dfile.encoding=UTF-8 P1ConRepeticiones
 
 Host: Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz, 8 cores, 7G, Ubuntu 18.04.3 LTS
 Time: Sat Dec 14 21:00:59 2019 -03 elapsed time: 80 seconds (0d 0h 1m 20s)
@@ -63,7 +63,7 @@ Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
 v  ~RuntimeStub::_new_array_Java
 J 265% c2 Utils.ordenarArray(Ljava/util/ArrayList;Ljava/util/ArrayList;)V (146 bytes) @ 0x00007f74d4c387b4 [0x00007f74d4c36a80+0x0000000000001d34]
 j  GP.run()V+25
-j  Main.main([Ljava/lang/String;)V+177
+j  P1ConRepeticiones.main([Ljava/lang/String;)V+177
 v  ~StubRoutines::call_stub
 
 ---------------  P R O C E S S  ---------------
@@ -99,7 +99,7 @@ Other Threads:
   0x00007f74b0061000 GCTaskThread "GC Thread#5" [stack: 0x00007f74929b8000,0x00007f7492ab8000] [id=19972]
   0x00007f74b0062000 GCTaskThread "GC Thread#6" [stack: 0x00007f74928b6000,0x00007f74929b6000] [id=19973]
   0x00007f74b00cd000 GCTaskThread "GC Thread#7" [stack: 0x00007f74927b4000,0x00007f74928b4000] [id=19974]
-  0x00007f74e005a800 ConcurrentGCThread "G1 Main Marker" [stack: 0x00007f74e4098000,0x00007f74e4198000] [id=19920]
+  0x00007f74e005a800 ConcurrentGCThread "G1 P1ConRepeticiones Marker" [stack: 0x00007f74e4098000,0x00007f74e4198000] [id=19920]
   0x00007f74e005c800 ConcurrentGCThread "G1 Conc#0" [stack: 0x00007f74cc4d7000,0x00007f74cc5d7000] [id=19922]
   0x00007f74c0001000 ConcurrentGCThread "G1 Conc#1" [stack: 0x00007f7492dc0000,0x00007f7492ec0000] [id=19958]
   0x00007f74e00e5000 ConcurrentGCThread "G1 Refine#0" [stack: 0x00007f74bdcfe000,0x00007f74bddfe000] [id=19924]
@@ -2099,7 +2099,7 @@ ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsysca
 
 VM Arguments:
 jvm_args: -javaagent:/home/niko/Descargas/idea-IU-192.7142.36/lib/idea_rt.jar=33209:/home/niko/Descargas/idea-IU-192.7142.36/bin -Dfile.encoding=UTF-8 
-java_command: Main
+java_command: P1ConRepeticiones
 java_class_path (initial): /home/niko/Escritorio/T3/target/classes
 Launcher Type: SUN_STANDARD
 

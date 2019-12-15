@@ -64,7 +64,7 @@ public class GP {
             fin = System.currentTimeMillis();
             iter++;
             System.out.print("Best response GEN " + iter + " : " + best.eval() + "   tamanno: " + best.countNodes() + "    fit: " + m.fitness(best) + "      ");
-            best.print();
+//            best.print();
             System.out.println();
         }
         best.print();

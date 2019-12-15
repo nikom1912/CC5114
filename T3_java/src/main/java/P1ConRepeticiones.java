@@ -1,9 +1,12 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.function.Function;
 
-public class Main {
+public class P1ConRepeticiones {
     static Random r = new Random(System.currentTimeMillis());
     static int max_iters = 1000;
     public static void main(String[] args) {
@@ -37,5 +40,22 @@ public class Main {
         GP gp = new GP(nr.pop_size, nr.mutation_rate, max_iters, nr);
 
         gp.run();
+
+        try {
+            FileWriter fw = new FileWriter("src/main/java/p1_2.txt");
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println("Grafico con repeticion: " + nr.numToFind );
+            pw.println("Respuesta: " + gp.besto_nodes_list.get(gp.getIters() - 1).eval());
+            pw.println(nr.pop_size);
+            pw.println(nr.mutation_rate);
+            ArrayList<Integer> forGraph = gp.get_list_best_fitness();
+            for(int i =0 ; i < gp.getIters(); i++){
+                pw.println(forGraph.get(i));
+            }
+            pw.close();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

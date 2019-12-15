@@ -8,7 +8,6 @@ public class MainSinReapeat {
     static Random r = new Random(System.currentTimeMillis());
     static int max_iters = 1000;
     public static void main(String[] args) {
-        int a = 2/0;
 
 //        int a = (int)(((Math.pow(2, 9) - 100)/Math.pow(2, 9))*10000);
 //        System.out.println(a);
@@ -33,9 +32,10 @@ public class MainSinReapeat {
         GP gp = new GP(nr.pop_size, nr.mutation_rate, max_iters, nr);
         gp.run();
         try {
-            FileWriter fw = new FileWriter("src/main/java/p1.txt");
+            FileWriter fw = new FileWriter("src/main/java/p2.txt");
             PrintWriter pw = new PrintWriter(fw);
             pw.println("Grafico sin repeticion: " + nr.numToFind );
+            pw.println("Respuesta: " + gp.besto_nodes_list.get(gp.getIters() - 1).eval());
             pw.println(nr.pop_size);
             pw.println(nr.mutation_rate);
             ArrayList<Integer> forGraph = gp.get_list_best_fitness();

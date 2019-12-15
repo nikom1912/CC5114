@@ -2,9 +2,9 @@ import java.util.*;
 
 public class NumRep extends GPMethods {
     int numToFind = 65346;
-    int pop_size = 10;
+    int pop_size = 40;
     double mutation_rate = 0.3;
-    int max_depth = 17;
+    int max_depth = 15;
     AST ast;
     Random r = new Random(System.currentTimeMillis());
 
@@ -24,7 +24,9 @@ public class NumRep extends GPMethods {
     @Override
     int fitness(Node n) {
         int tam = n.countNodes();
+        // mejora fitness
         int fitness_tam =(int) (((Math.pow(2, max_depth) - tam)/Math.pow(2, max_depth))*numToFind);
+        //
         int fitnes_val = Math.max(numToFind - Math.abs(numToFind - n.eval()), 0);
         return  fitnes_val + fitness_tam;
     }
